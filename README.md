@@ -10,38 +10,41 @@ This application failed to start because no Qt platform plugin could be initiali
 
 # SOLUTION:
 
-docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $XAUTHORITY:$XAUTHORITY -e XAUTHORITY=$XAUTHORITY your_image_name
+### First give permission
+    xhost +local:
+### Then run the container
+    docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $XAUTHORITY:$XAUTHORITY -e XAUTHORITY=$XAUTHORITY your_image_name
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 # ERROR :
 
-not able to build the docker image
+Not able to build the docker image
 
 # SOLUTION :
 
-docker build -t <appname> -f <file location> .
-
-----------------------------------------------------------------------------------------------------------------------------------------------
-
-# ERROR :
-
-not able to push docker image into Hub
-
-# SOLUTION :
-
-create tag first
-docker Tag <appname> <username>/<appname>:<version>
-docekr push <username>/<appname>:<version>
+    docker build -t <appname> -f <file location> .
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 # ERROR :
 
-not able create dockerfile
+Not able to push docker image into Hub
 
 # SOLUTION :
 
-write the docker file like below:
+Create tag first
+    docker Tag <appname> <username>/<appname>:<version>
+    docekr push <username>/<appname>:<version>
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+# ERROR :
+
+Not able create dockerfile
+
+# SOLUTION :
+
+Write the docker file like below:
 ```
 # Use an official Ubuntu as the base image
 FROM ubuntu:latest
