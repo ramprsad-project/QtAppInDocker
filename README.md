@@ -65,7 +65,7 @@ RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/*
    
-# Set the environment variable : In some cases, the QT_X11_NO_MITSHM environment variable needs to be set to avoid certain issues related to shared memory.
+# In some cases, the QT_X11_NO_MITSHM environment variable needs to be set to avoid certain issues related to shared memory. disable the use of MIT-SHM (MIT Shared Memory Extension) in Qt applications when running them in an X11 environment.
 ENV QT_X11_NO_MITSHM=1
    
 # Copy the application files to the Docker image
