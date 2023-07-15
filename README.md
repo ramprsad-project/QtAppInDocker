@@ -1,7 +1,7 @@
 # QtAppInDocker
 Qt C++ Widget GUI application Run in linux enviornment using docker 
 
-# ERROR :
+# 1. ERROR :
 
 Authorization required, but no authorization protocol specified
 qt.qpa.xcb: could not connect to display :0
@@ -16,7 +16,7 @@ This application failed to start because no Qt platform plugin could be initiali
     docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $XAUTHORITY:$XAUTHORITY -e XAUTHORITY=$XAUTHORITY your_image_name
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-# ERROR :
+# 2. ERROR :
 
 Not able to build the docker image
 
@@ -26,7 +26,7 @@ Not able to build the docker image
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-# ERROR :
+# 3. ERROR :
 
 Not able to push docker image into Hub
 
@@ -38,7 +38,7 @@ Create tag first
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-# ERROR :
+# 4. ERROR :
 
 Not able create dockerfile
 
