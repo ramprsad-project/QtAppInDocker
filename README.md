@@ -23,6 +23,7 @@ Not able to build the docker image
 # SOLUTION :
 
     docker build -t <appname> -f <file location> .
+    Example:  docker build -t qtapp -f dockerfile.dockerfile .
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
